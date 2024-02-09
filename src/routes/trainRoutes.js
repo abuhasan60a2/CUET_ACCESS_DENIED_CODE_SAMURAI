@@ -1,4 +1,3 @@
-// src/routes/trainRoutes.js
 import express from "express";
 import { addTrain } from "../controllers/trainController.js";
 
