@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRoutes from "./routes/userRoutes.js";
-
+import stationRoutes from "./routes/stationRoutes.js";
 dotenv.config();
 
 const app = express();
@@ -24,3 +24,4 @@ mongoose
   .catch((err) => console.error("Error connecting to MongoDB:", err));
 
 app.use("/api/users", userRoutes);
+app.use("/api/stations", stationRoutes);
