@@ -5,6 +5,7 @@ import userRoutes from "./routes/userRoutes.js";
 import stationRoutes from "./routes/stationRoutes.js";
 import trainRoutes from "./routes/trainRoutes.js";
 import walletRoutes from "./routes/walletRoutes.js";
+import ticketRoutes from "./routes/ticketRoutes.js";
 dotenv.config();
 
 const app = express();
@@ -29,3 +30,4 @@ app.use("/api/users", userRoutes);
 app.use("/api/stations", stationRoutes);
 app.use("/api/trains", trainRoutes);
 app.use("/api/wallets", walletRoutes);
+app.use("/api/tickets", ticketRoutes);
