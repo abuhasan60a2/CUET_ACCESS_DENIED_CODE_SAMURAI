@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRoutes from "./routes/userRoutes.js";
 import stationRoutes from "./routes/stationRoutes.js";
+import trainRoutes from "./routes/trainRoutes.js";
 dotenv.config();
 
 const app = express();
@@ -25,3 +26,4 @@ mongoose
 
 app.use("/api/users", userRoutes);
 app.use("/api/stations", stationRoutes);
+app.use("/api/trains", trainRoutes);
