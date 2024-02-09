@@ -5,6 +5,7 @@
   "repository": "git@github.com:abuhasan60a2/CUET_ACCESS_DENIED_CODE_SAMURAI.git",
   "author": "abuhasan60a2 <abuhasan1600@gmail.com>",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon ./src/app.js"

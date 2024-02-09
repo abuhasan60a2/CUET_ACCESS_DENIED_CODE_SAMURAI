@@ -1,12 +1,26 @@
-const express = require('express');
-require('dotenv').config();
+import express from "express";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+import userRoutes from "./routes/userRoutes.js";
+
+dotenv.config();
+
 const app = express();
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
+app.use(express.json());
 
-app.listen(port, () => {
-    console.log(`Server listening at http://localhost:${port}`);
-});
+mongoose
+  .connect(process.env.DB_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Connected to MongoDB");
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+    });
+  })
+  .catch((err) => console.error("Error connecting to MongoDB:", err));
+
+app.use("/api/users", userRoutes);
